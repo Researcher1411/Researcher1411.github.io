@@ -586,36 +586,17 @@
     </section>
 
     <section id="collaborate" class="section dark-bg">
-        <div class="container">
-            <h2>Collaboration Inquiry</h2>
-            <form id="contactForm" class="collab-form" action="https://formsubmit.co/akankshabodhe11@gmail.com" method="POST">
-                <!-- Secret invisible fields (they help send emails) -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://researcher1411.github.io/thank-you.html">
-                
-                <!-- Questions people will answer -->
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="channel">YouTube Channel (if you have one)</label>
-                    <input type="text" id="channel" name="channel">
-                </div>
-                <div class="form-group">
-                    <label for="project">What do you want to talk about?</label>
-                    <textarea id="project" name="project" rows="5" required></textarea>
-                </div>
-                
-                <!-- Big Send Button -->
-                <button type="submit" class="btn">Send Message to Akanksha</button>
-            </form>
-        </div>
-    </section>
+  <div class="container">
+    <h2>Collaboration Inquiry</h2>
+    <form action="https://formsubmit.co/akankshabodhe11@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
 
     <footer>
         <div class="container">
