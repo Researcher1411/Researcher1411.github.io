@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akanksha | True Crime Researcher</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Raleway:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #c0392b;
+            --light-color: #ecf0f1;
+            --dark-color: #1a1a1a;
+            --accent-color: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Crimson Text', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .dark-bg {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+        
+        .dark-bg a {
+            color: var(--light-color);
+        }
+        
+        .dark-bg a:hover {
+            color: var(--accent-color);
+        }
+        
+        .section-intro {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--light-color);
+            margin-top: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1510519138101-570d1dca3d66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .social-links {
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.75rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Case Files Section */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .case-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .case-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .case-content {
+            padding: 1.5rem;
+        }
+        
+        .case-content h3 {
+            color: var(--primary-color);
+        }
+        
+        /* Script Samples Section */
+        .script-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .script-item {
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .script-header {
+            width: 100%;
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: white;
+            text-align: left;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .script-header:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .script-content {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .script-content.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+        
+        /* Methodology Section */
+        .methodology-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .step {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Form */
+        .collab-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        textarea {
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#cases">Case Files</a></li>
+                <li><a href="#scripts">Scripts</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#collaborate">Collaborate</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>The Crime Chronicles</h1>
+            <p class="subtitle">Researcher</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-patreon"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section dark-bg">
+        <div class="container">
+            <h2>About the Researcher</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Hi! I am a law graduate with a deep passion for true crime and a keen eye for detail. I have always been drawn to the complexities of real-life cases — the timelines, the evidence, the psychology behind the crime — and I love diving into the research that brings these stories to life.</p>
+                    <p>Whether you're a content creator, podcaster, or filmmaker, I can help you find accurate information, build solid case timelines, and dig up the kind of lesser-known details that make a story really compelling. I enjoy the process of piecing everything together and making sure no fact goes unchecked..</p>
+                    <p>If you're looking for someone who is genuinely invested in the subject and easy to work with, I will be happy to collaborate!</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="The Crime Chronicles">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cases" class="section">
+        <div class="container">
+            <h2>Case Files</h2>
+            <p class="section-intro">In-depth analyses of cases with new perspectives and archival findings.</p>
+            
+            <div class="case-grid">
+                <!-- Case 1: James Bulger -->
+                <div class="case-card">
+                    <div class="case-image" style="background-image: url('https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80')"></div>
+                    <div class="case-content">
+                        <h3>James Bulger Case</h3>
+                        <p>Analysis of the 1993 UK case involving the abduction and murder of a toddler by two 10-year-old boys.</p>
+                        <a href="https://docs.google.com/document/d/https://https://docs.google.com/document/d/1yCgibkGZXwipo-8-VgWKQ_WkQ6hH-NXN8IwefU_cUos/edit?usp=sharing" target="_blank" class="btn">View Case Study</a>
+                    </div>
+                </div>
+                
+                <!-- Case 2: Edmund Kemper -->
+                <div class="case-card">
+                    <div class="case-image" style="background-image: url('https://images.unsplash.com/photo-1544428571-c3c4f19bffff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="case-content">
+                        <h3>Edmund Kemper: The Co-Ed Killer</h3>
+                        <p>Psychological profile of the serial killer who murdered his grandparents, mother, and college students.</p>
+                        <a href="https://docs.google.com/document/d/https://docs.google.com/document/d/1bOF1nLxlRArjr3uweGtlLEQUQPqEe6IkoSyHbPNVpBE/edit?usp=sharing" target="_blank" class="btn">View Case Study</a>
+                    </div>
+                </div>
+                
+                <!-- Case 3: Raja Kolander -->
+                <div class="case-card">
+                    <div class="case-image" style="background-image: url('https://images.unsplash.com/photo-1510519138101-570d1dca3d66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80')"></div>
+                    <div class="case-content">
+                        <h3>Raja Kolander: The Delhi Cannibal</h3>
+                        <p>Investigation into the 2006 case of a man who killed and consumed parts of his victims.</p>
+                        <a href="https://docs.google.com/document/d/https://docs.google.com/document/d/1wtjwAPdDCGpUNmY7CQ4FhcXF7SsgFiFS-hG_PvhodTY/edit?usp=sharing" target="_blank" class="btn">View Case Study</a>
+                    </div>
+                </div>
+
+                <!-- Case 4: Luoyang Sex Slaves -->
+                <div class="case-card">
+                    <div class="case-image" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="case-content">
+                        <h3>Luoyang Sex Slaves</h3>
+                        <p>Examination of the systemic sexual slavery during WWII in China.</p>
+                        <a href="https://docs.google.com/document/d/https://docs.google.com/document/d/1OPi1GNHgEZnTLDUQkVd9hNSFMmib1hxl_F01ov_y-24/edit?usp=sharing" target="_blank" class="btn">View Case Study</a>
+                    </div>
+                </div>
+
+                <!-- Case 5: Richard Speck -->
+                <div class="case-card">
+                    <div class="case-image" style="background-image: url('https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="case-content">
+                        <h3>Richard Speck: The Nurse Killer</h3>
+                        <p>Forensic breakdown of the 1966 Chicago massacre of eight student nurses.</p>
+                        <a href="https://docs.google.com/document/d/https://docs.google.com/document/d/1_0qT0X2eDqSYFAXETM1p9a0q7wkd4bdHx0x4WMHuMwg/edit?usp=sharing" target="_blank" class="btn">View Case Study</a>
+                    </div>
+                </div>
+
+                <!-- Case 6: Priyadarshini Mattoo -->
+                <div class="case-card">
+                    <div class="case-image" style="background-image: url('https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="case-content">
+                        <h3>Priyadarshini Mattoo Case</h3>
+                        <p>Legal analysis of the 1996 Delhi rape and murder that shocked India.</p>
+                        <a href="https://docs.google.com/document/d/https://docs.google.com/document/d/1u83NAAETVtopvgIN84H84-vB0ppD-7uebFSNYFm8cLc/edit?usp=sharing" target="_blank" class="btn">View Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="scripts" class="section dark-bg">
+        <div class="container">
+            <h2>Script Samples</h2>
+            <p class="section-intro">Narrative scripts prepared for YouTube documentaries.</p>
+            
+            <div class="script-accordion">
+                <!-- Script 1: James Bulger -->
+                <div class="script-item">
+                    <button class="script-header">
+                        The Tragedy of James Bulger: A Nation's Horror
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="script-content">
+                        <p>[OPENING SCENE: CCTV footage of a shopping mall in Liverpool]</p>
+                        <p>"February 12, 1993. A day that would forever scar the British psyche. Two-year-old James Bulger was led away from his mother by two boys barely older than children themselves..."</p>
+                        <a href="https://docs.google.com/document/d/https://docs.google.com/document/d/1kZJR98XadtBsMx1JxJNfiVdLQ0lRe2veffdF7KRp3RY/edit?usp=sharing" target="_blank" class="btn btn-outline">Download Full Script</a>
+                    </div>
+                </div>
+                
+                <!-- Script 2: Edmund Kemper -->
+                <div class="script-item">
+                    <button class="script-header">
+                        Edmund Kemper: The Co-Ed Killer
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="script-content">
+                        <p>[CLOSE-UP: A pair of glasses resting on a psychology textbook]</p>
+                        <p>"With an IQ of 145, Edmund Kemper could have been a brilliant psychologist. Instead, he turned his understanding of the human mind into a weapon..."</p>
+                        <a href="https://docs.google.com/document/d/https://docs.google.com/document/d/1Att1ZHZuwYP0rd4H9lUMk4VTWZRTOFX9TJKuvZU-WaA/edit?usp=sharing" target="_blank" class="btn btn-outline">Download Full Script</a>
+                    </div>
+                </div>
+                
+                <!-- Script 3: Raja Kolander -->
+                <div class="script-item">
+                    <button class="script-header">
+                        Raja Kolander: Anatomy of a Cannibal
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="script-content">
+                        <p>[FADE IN: A dimly lit alley in Delhi at night]</p>
+                        <p>"In the underbelly of India's capital, a predator was hunting. But this wasn't an ordinary killer - Raja Kolander didn't just take lives, he consumed them..."</p>
+                        <a href="https://docs.google.com/document/d/https://docs.google.com/document/d/1vhqvlczZkpr8NRqYfqk4txSlBPsHH6sP3RYu_Eu0Jpo/edit?usp=sharing" target="_blank" class="btn btn-outline">Download Full Script</a>
+                    </div>
+                </div>
+                
+                <!-- Script 4: Luoyang Sex Slaves -->
+                <div class="script-item">
+                    <button class="script-header">
+                        Luoyang's Sex Slaves: China's Hidden Dungeon Horror
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="script-content">
+                        <p>[ARCHIVAL FOOTAGE: Black and white images of wartime China]</p>
+                        <p>"While the world remembers the horrors of WWII, some stories remain buried. The 'comfort women' of Luoyang endured unimaginable suffering that history nearly forgot..."</p>
+                        <a href="https://docs.google.com/document/d/https://docs.google.com/document/d/1n1PuK3QCVnz3r2GWEPRh_Bl6IQhsrVHhChxflszPazQ/edit?usp=sharing" target="_blank" class="btn btn-outline">Download Full Script</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="methodology" class="section">
+        <div class="container">
+            <h2>Research Methodology</h2>
+            <p class="section-intro">My approach combines legal analysis, psychological profiling, and historical context to provide comprehensive case studies.</p>
+            
+            <div class="methodology-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Case Selection</h3>
+                    <p>Identifying cases with historical significance, unresolved questions, or psychological complexity that warrant deeper examination.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Archival Research</h3>
+                    <p>Gathering court documents, police reports, news archives, and any available primary sources related to the case.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Forensic Analysis</h3>
+                    <p>Examining crime scene details, autopsy reports, and forensic evidence with attention to investigative procedures.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Psychological Profiling</h3>
+                    <p>Developing psychological profiles of perpetrators and victims based on behavioral evidence and expert literature.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Legal Review</h3>
+                    <p>Analyzing trial proceedings, legal strategies, and judicial decisions through a critical legal lens.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Contextualization</h3>
+                    <p>Placing the case within its historical, social, and cultural context to understand broader implications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collaborate" class="section dark-bg">
+        <div class="container">
+            <h2>Collaboration Inquiry</h2>
+            <form id="contactForm" class="collab-form" action="https://formspree.io/f/your-email@example.com" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="channel">YouTube Channel (if applicable)</label>
+                    <input type="text" id="channel" name="channel">
+                </div>
+                <div class="form-group">
+                    <label for="project">Project Description</label>
+                    <textarea id="project" name="project" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Submit Inquiry</button>
+            </<form 
+            action="https://formsubmit.co/your-akankshabodhe11@gmail.com" 
+            method="POST"
+        >
+            <!-- Required hidden fields -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://username.github.io/thank-you.html">
+            
+            <!-- Your form fields -->
+            <input type="text" name="name" required>
+            <input type="email" name="email" required>
+            <textarea name="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Akanksha | Researcher</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#collaborate">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Accordion functionality for script samples
+        document.querySelectorAll('.script-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+                
+                // Toggle active class
+                content.classList.toggle('active');
+                
+                // Rotate icon
+                if (content.classList.contains('active')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const object = {};
+            formData.forEach((value, key) => {
+                object[key] = value;
+            });
+            
+            // Here you would typically send the data to a server
+            // For demo purposes, we'll just log it and show an alert
+            console.log(object);
+            alert('Thank you for your inquiry! I will get back to you soon.');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
